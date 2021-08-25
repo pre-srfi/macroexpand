@@ -8,7 +8,7 @@ Early Draft
 
 ## Abstract
 
-This SRFI displays the Scheme code that results from expanding a macro, without actually evaluating the resulting code --
+This SRFI displays the Scheme code that results from expanding a macro, without actually evaluating that code --
 an essential tool for debugging macros.
 
 ## Issues
@@ -17,7 +17,7 @@ an essential tool for debugging macros.
 
 ### Survey of prior art
 
-Common Lisp has standard `macroexpand` and `macroexpand-1` functions.
+Common Lisp has [standard `macroexpand` and `macroexpand-1` functions](http://www.lispworks.com/documentation/HyperSpec/Body/f_mexp_.htm).
 
 https://doc.scheme.org/surveys/MacroExpand/
 
