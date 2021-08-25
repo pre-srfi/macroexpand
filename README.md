@@ -1,4 +1,4 @@
-# SRFI nnn: Title
+# SRFI nnn: Macroexpand
 
 by Firstname Lastname, Another Person, Third Person
 
@@ -8,56 +8,42 @@ Early Draft
 
 ## Abstract
 
-??? abstract, preferably shorter than 200 words. Please outline the
-need for, and design of, the proposal.
+This SRFI displays the Scheme code that results from expanding a macro, without actually evaluating the resulting code --
+an essential tool for debugging macros.
 
 ## Issues
 
-??? Optional section that may point out things to be resolved. This
-will not appear in the final SRFI.
-
 ## Rationale
-
-??? detailed rationale. This should be 200-500 words long. Please
-explain why the proposal should be incorporated as a standard feature
-in Scheme implementations. List related standards and SRFIs, including
-dependencies, conflicts, and replacements. If there are other
-standards which this proposal will replace or with which it will
-compete, please explain why the present proposal is a substantial
-improvement.
 
 ### Survey of prior art
 
-GitHub's version of Markdown can make tables. For example:
+Common Lisp has standard `macroexpand` and `macroexpand-1` functions.
 
-| System        | Procedure | Signature                 |
-| ------------- |:---------:| ------------------------- |
-| System A      | `jumble`  | _list_ _elem_             |
-| System B      | `bungle`  | _elem_ _list_             |
-| System C      | `frob`    | _list_ _elem_ _predicate_ |
+https://doc.scheme.org/surveys/MacroExpand/
 
 ## Specification
 
-??? detailed specification. This should be detailed enough that a
-conforming implementation could be completely created from this
-description.
+`(macroexpanded? form) => boolean`
+
+`(macroexpand form [environment]) => expansion, expanded?`
+
+`(macroexpand-1 form [environment]) => expansion, expanded?`
+
+`(macroexpand-n form [environment [n]]) => expansion, expanded?`
 
 ## Examples
 
+`(macroexpand '(cond (a 1) (else 2)))`
+
 ## Implementation
 
-??? explanation of how it meets the sample implementation requirement
-(see process), and the code, if possible, or a link to it Source for
-the sample implementation.
+The implementation of this SRFI depends deeply on the macro systems available in each Scheme implementation, and how those macro systems are implemented in detail.
 
 ## Acknowledgements
 
-??? Give credits where credits is due.
+Common Lisp, #chicken IRC
 
 ## References
-
-??? Optional section with links to web pages, books and papers that
-helped design the SRFI.
 
 ## Copyright
 
